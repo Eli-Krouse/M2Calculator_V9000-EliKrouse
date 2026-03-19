@@ -16,22 +16,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BoO-pk-YHy">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter a number" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BoO-pk-YHy">
                                 <rect key="frame" x="195" y="146" width="152" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="15z-ad-WPl"/>
+                                </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y9F-Ub-3rc">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="^" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y9F-Ub-3rc">
                                 <rect key="frame" x="195" y="188" width="152" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="L0L-YC-yun"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="lLO-RA-ziE"/>
+                                </connections>
                             </textField>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gtr-Rj-LZD">
-                                <rect key="frame" x="48" y="230" width="299" height="11"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gtr-Rj-LZD">
+                                <rect key="frame" x="48" y="228" width="299" height="11"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="11" id="fzD-cf-BZa"/>
+                                </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ug8-Vv-TiU">
                                 <rect key="frame" x="48" y="187" width="53" height="35"/>
@@ -44,15 +53,15 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k5Z-2F-2m4">
-                                <rect key="frame" x="48" y="337" width="299" height="35"/>
+                                <rect key="frame" x="48" y="335" width="299" height="37"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Calculate"/>
                                 <connections>
                                     <action selector="calculate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1AB-o8-X96"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGc-da-gYT">
-                                <rect key="frame" x="48" y="261" width="299" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGc-da-gYT">
+                                <rect key="frame" x="48" y="259" width="299" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="b1u-vi-a3N"/>
                                 </constraints>
@@ -68,7 +77,7 @@
                             <constraint firstItem="ug8-Vv-TiU" firstAttribute="leading" secondItem="gtr-Rj-LZD" secondAttribute="leading" id="8Fx-lA-Wma"/>
                             <constraint firstItem="UGc-da-gYT" firstAttribute="leading" secondItem="k5Z-2F-2m4" secondAttribute="leading" id="BPs-mw-u4e"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="k5Z-2F-2m4" secondAttribute="bottom" constant="412" id="BdY-h8-upX"/>
-                            <constraint firstItem="gtr-Rj-LZD" firstAttribute="top" secondItem="ug8-Vv-TiU" secondAttribute="bottom" constant="8" id="HIh-kd-KBP"/>
+                            <constraint firstItem="gtr-Rj-LZD" firstAttribute="top" secondItem="ug8-Vv-TiU" secondAttribute="bottom" constant="7" id="HIh-kd-KBP"/>
                             <constraint firstItem="ug8-Vv-TiU" firstAttribute="bottom" secondItem="Y9F-Ub-3rc" secondAttribute="bottom" id="JGD-UD-Np4"/>
                             <constraint firstItem="gtr-Rj-LZD" firstAttribute="trailing" secondItem="UGc-da-gYT" secondAttribute="trailing" id="KBV-sn-Kb3"/>
                             <constraint firstItem="ug8-Vv-TiU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="48" id="Mb8-nO-yZs"/>

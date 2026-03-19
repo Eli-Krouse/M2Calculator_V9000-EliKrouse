@@ -19,10 +19,10 @@ class ViewController: UIViewController
     @IBAction func operatorButton(_ sender: Any)
     {
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        actionSheet.addAction(UIAlertAction(title: "+", style: .default ) {_ in self.selectOperator.setTitle("+", for: .normal)})
-        actionSheet.addAction( UIAlertAction(title: "-", style: .default ) {_ in self.selectOperator.setTitle("-", for: .normal)})
-        actionSheet.addAction( UIAlertAction(title: "*", style: .default ) {_ in self.selectOperator.setTitle("*", for: .normal)})
-        actionSheet.addAction( UIAlertAction(title: "/", style: .default ) {_ in self.selectOperator.setTitle("/", for: .normal)})
+        actionSheet.addAction(UIAlertAction(title: "+", style: .default) {_ in self.selectOperator.setTitle("+", for: .normal)})
+        actionSheet.addAction( UIAlertAction(title: "-", style: .default) {_ in self.selectOperator.setTitle("-", for: .normal)})
+        actionSheet.addAction( UIAlertAction(title: "*", style: .default) {_ in self.selectOperator.setTitle("*", for: .normal)})
+        actionSheet.addAction( UIAlertAction(title: "/", style: .default) {_ in self.selectOperator.setTitle("/", for: .normal)})
     
     }
     
@@ -81,8 +81,30 @@ class ViewController: UIViewController
     {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        /*
+        operand1TextField.delegate = self
+        operand2TextField.delegate = self
+         
+         ^ pogramatically adding delegation requires the extension or a pull from the main class of UITextFieldDelegate!!
+         */
     }
 
 
 }
 
+extension ViewController: UITextFieldDelegate
+{
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard !string.isEmpty else
+        {
+            return true
+        }
+        guard let _ = Int(string) else
+        {
+            return false
+        }
+        
+        return true
+    }
+}
