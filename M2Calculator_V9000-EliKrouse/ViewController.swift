@@ -23,11 +23,12 @@ class ViewController: UIViewController
         actionSheet.addAction( UIAlertAction(title: "-", style: .default ) {_ in self.selectOperator.setTitle("-", for: .normal)})
         actionSheet.addAction( UIAlertAction(title: "*", style: .default ) {_ in self.selectOperator.setTitle("*", for: .normal)})
         actionSheet.addAction( UIAlertAction(title: "/", style: .default ) {_ in self.selectOperator.setTitle("/", for: .normal)})
+    
     }
     
-    func showAlert(_ myMessage: String)
+    func showAlert(_ myMessage: String, _ title: String? = "Error")
     {
-        let alert = UIAlertController(title: "Error", message: myMessage, preferredStyle: .alert)
+        let alert = UIAlertController(title: title, message: myMessage, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default)
         alert.addAction(okAction)
         present(alert, animated: true)
@@ -37,7 +38,7 @@ class ViewController: UIViewController
     {
         guard let op = selectOperator.title(for: .normal), op != "?" else
         {
-            showAlert("Please select a valid operator")
+            showAlert("Please select a valid operator", "Operator Error")
             return
             
         }
